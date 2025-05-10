@@ -1,31 +1,39 @@
-version: "3.8"
+version: '3.8'
+
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+    container_name: shift-scheduler-backend
     ports:
       - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/shifts
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
     depends_on:
       - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/shifts
 
   frontend:
-    build: ./frontend/shift-scheduler-frontend
+    build:
+      context: ./frontend/shift-scheduler-frontend
+    container_name: shift-scheduler-frontend
     ports:
-      - "3000:3000"
-    environment:
-      VITE_API_URL: http://localhost:8080
+      - "8080:80"
+    depends_on:
+      - backend
 
   db:
     image: postgres:15
-    ports:
-      - "5432:5432"
+    container_name: shift-scheduler-db
     environment:
       POSTGRES_DB: shifts
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
 volumes:
-  pgdata:
+  postgres-data:

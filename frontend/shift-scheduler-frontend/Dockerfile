@@ -1,23 +1,18 @@
-# Base image
-FROM node:18
+FROM node:18-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy source files
-COPY .. .
-
-# Build the app
+COPY . .
 RUN npm run build
 
-# Serve the app with a simple static server
-RUN npm install -g serve
-CMD ["serve", "-s", "dist"]
+# Use Nginx to serve the built app
+FROM nginx:alpine
 
-EXPOSE 3000
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
