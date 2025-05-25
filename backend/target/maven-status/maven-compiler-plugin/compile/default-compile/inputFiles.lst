@@ -1,1 +1,9 @@
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\controller\AuthController.java
 C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\ShiftSchedulerBackendApplication.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\security\JwtUtils.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\dto\RegisterRequest.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\model\User.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\AppConfig.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\dto\LoginRequest.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\repository\UserRepository.java
+C:\Users\kater\IdeaProjects\ShiftScheduler\backend\src\main\java\com\example\shiftschedulerbackend\service\AuthService.java

@@ -1,1 +1,9 @@
+com\example\shiftschedulerbackend\security\JwtUtils.class
+com\example\shiftschedulerbackend\controller\AuthController.class
+com\example\shiftschedulerbackend\repository\UserRepository.class
+com\example\shiftschedulerbackend\model\User.class
+com\example\shiftschedulerbackend\AppConfig.class
+com\example\shiftschedulerbackend\dto\RegisterRequest.class
 com\example\ShiftSchedulerBackendApplication.class
+com\example\shiftschedulerbackend\service\AuthService.class
+com\example\shiftschedulerbackend\dto\LoginRequest.class
