@@ -1,7 +1,17 @@
-import axios from 'axios';
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8081/api";
 
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
+export async function login(email, password) {
+  const response = await fetch(`${API_BASE_URL}/auth/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
 
-export default api;
+  if (!response.ok) {
+    throw new Error("Login failed");
+  }
+
+  return response.json();
+}

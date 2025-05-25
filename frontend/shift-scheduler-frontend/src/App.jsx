@@ -1,12 +1,11 @@
-// src/App.jsx
-import React from 'react';
+import Login from './pages/Login'
 
 function App() {
   return (
-    <div style={{ padding: '2rem', fontSize: '1.5rem' }}>
-      Hello from Shift Scheduler Frontend!
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Login />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
